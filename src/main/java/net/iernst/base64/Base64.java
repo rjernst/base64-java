@@ -50,9 +50,7 @@ public class Base64 {
       public String encodeToString(byte[] bytes) {
         try {
           return (String)encodeMethod.invoke(jaxbClazz, bytes);
-        } catch (IllegalAccessException e) {
-          throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
+        } catch (ReflectiveOperationException e) {
           throw new RuntimeException(e);
         }
       }
